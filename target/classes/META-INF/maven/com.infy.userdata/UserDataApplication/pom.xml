@@ -23,8 +23,8 @@
 	<dependencies>
 		
 		
-					
-
+		
+						
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
@@ -121,10 +121,41 @@
 		</dependency>
 	</dependencies>
 	
-	
+	<repositories>
+    <repository>
+        <id>maven-central</id>
+        <url>https://repo1.maven.org/maven2</url>
+    </repository>
+</repositories>
+
+
+<profiles>
+    <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <sonar.host.url>http://localhost:9000</sonar.host.url>
+        </properties>
+    </profile>
+    <!-- Other profiles if any -->
+</profiles>
+
+
 
 	<build>
+		
+		
 		<plugins>
+			
+			<plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.0.2155</version>
+        </plugin>
+			
+			
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -175,7 +206,10 @@
 					</properties>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
+	
+	
 
 </project>
