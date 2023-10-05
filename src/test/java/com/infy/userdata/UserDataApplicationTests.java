@@ -26,7 +26,7 @@ String userName = "some_user_name";
 UserDataException e= Assertions.assertThrows(UserDataException.class, ()-> userDataService.getDetailsByUserName(userName));
 Assertions.assertEquals("Service.NO_DETAILS_FOUND", e.getMessage());
 
-
-
 }
+
+
 }

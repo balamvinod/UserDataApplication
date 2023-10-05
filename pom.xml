@@ -139,34 +139,27 @@
 <profiles>
 	
 	
-	
-    <profile>
-  <id>SonarQube</id>
-  <properties>
-    <sonar.host.url>http://localhost:9000</sonar.host.url>
-  </properties>
-</profile>
-<profile>
+	<profile>
   <id>SonarQube</id>
   <activation>
-    <activeByDefault>true</activeByDefault>
+    <activeByDefault>false</activeByDefault>
   </activation>
+
   <properties>
+    <sonar.projectKey>my-project-key</sonar.projectKey>
     <sonar.host.url>http://localhost:9000</sonar.host.url>
   </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.7.0.983</version>
+      </plugin>
+    </plugins>
+  </build>
 </profile>
-
-
-    
-    <profile>
-        <id>sonar</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <properties>
-            <sonar.host.url>http://localhost:9000</sonar.host.url>
-        </properties>
-    </profile>
     <!-- Other profiles if any -->
 </profiles>
 
@@ -226,6 +219,14 @@
 					<includes>
 						<include>**/*Verification.java</include>
 					</includes>
+					
+					<properties>
+						<property>
+				  <name>failIfNoTests</name>
+				  <value>false</value>
+				</property>
+
+					</properties>
 					<properties>
 						<configurationParameters>
 							junit.jupiter.displayname.generator.default=com.verification.NameGenerator
