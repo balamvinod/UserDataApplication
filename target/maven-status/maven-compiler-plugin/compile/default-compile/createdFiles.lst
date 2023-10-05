@@ -1,0 +1,12 @@
+com\infy\userdata\entity\User.class
+com\infy\userdata\UserDataApplication.class
+com\infy\userdata\utility\ErrorInfo.class
+com\infy\userdata\api\UserDataAPI.class
+com\infy\userdata\validator\UserValidator.class
+com\infy\userdata\exception\UserDataException.class
+com\infy\userdata\service\UserDataService.class
+com\infy\userdata\utility\ExceptionControllerAdvice.class
+com\infy\userdata\service\UserDataServiceImpl.class
+com\infy\userdata\repository\UserDataRepository.class
+com\infy\userdata\utility\LoggingAspect.class
+com\infy\userdata\dto\UserDTO.class
