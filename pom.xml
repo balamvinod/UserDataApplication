@@ -194,6 +194,7 @@
 						</configuration>
 					</execution>
 					
+					
 					<execution>
 						<id>VerificationResourceInclusion</id>
 						<phase>generate-test-resources</phase>
